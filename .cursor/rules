@@ -1,0 +1,11 @@
+
+Creating an rpm lock file
+
+The directions for rpm-lockfile-prototype are here: https://github.com/konflux-ci/rpm-lockfile-prototype
+Instead of building the container image though, you can use quay.io/bcook/rpm-lockfile-prototype:latest
+
+How to create / update an rpm lock file from rpms.in.yaml
+An example is:
+podman run --rm -v ${PWD}:/source localhost/rpm-lockfile-prototype:latest --outfile=/source/rpms.lock.yaml /source/rpms.in.yaml
+
+this works when rpms.in.yaml is in the working directory, which gets mounted to the container in /source
